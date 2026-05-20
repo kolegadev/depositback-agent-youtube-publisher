@@ -1,0 +1,18 @@
+{
+  "workflow_id": "depositback-agent-youtube-publisher-default",
+  "version": "1.0.0",
+  "agent": "youtube-publisher",
+  "created": "2026-05-20T18:04:39.882467",
+  "description": "Default health-check workflow for YouTube Publisher",
+  "steps": [
+    {
+      "id": "health_check",
+      "skill": "noop",
+      "params": {
+        "message": "YouTube Publisher is operational"
+      }
+    }
+  ],
+  "on_success": "Write result to data/outbox/",
+  "on_failure": "Update state.json with error status"
+}
